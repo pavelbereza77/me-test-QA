@@ -10,3 +10,6 @@ class MainPage(BasePage):
     def goo_to_page_editor(self):
         self.browser.find_element(*MainPageLocators.BUTTON_MASSAGE_EDITOR).click()
 
+    def go_to_preview_page(self):
+        self.browser.find_element(*MainPageLocators.BUTTON_PREVIEW).click()
+

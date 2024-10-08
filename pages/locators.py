@@ -16,3 +16,18 @@ class MainPageLocators():
     BUTTON_CLOSE = (By.XPATH, "//button[text()='Close']")
 
     TEMPLATE_TEXT = (By.CSS_SELECTOR, "textarea[placeholder='main']")
+
+    BLOK_IF_THEN_ELSE = (By.XPATH, "//div[@class='undefined']")
+
+    TEXT_EDITOR = (By.CSS_SELECTOR, "textarea[placeholder = 'optional']")
+
+
+class PreviewPageLocator():
+    FORM_MESSAGE_PREVIEW = (By.XPATH, "//div[contains(@class,'MessagePreview_container')]")
+    BUTTON_CLOS_MESSAGE_PREVIEW = (By.XPATH, "//button[contains(@class,'MessagePreview_closeButton')]")
+    TEXT_MESSAGE_PREVIEW = (By.XPATH, "//div[contains(@class,'MessagePreview_preview')]/p")
+
+    FIRSTNAME_PREVIEW = (By.CSS_SELECTOR, "input[placeholder='firstname']")
+    LASTNAME_PREVIEW = (By.CSS_SELECTOR, "input[placeholder='lastname']")
+    COMPANY_PREVIEW = (By.CSS_SELECTOR, "input[placeholder='company']")
+    POSITION_PREVIEW = (By.CSS_SELECTOR, "input[placeholder='position']")
