@@ -26,9 +26,6 @@ class PreviewPage(BasePage):
         self.browser.find_element(*MainPageLocators.BUTTON_IF_THEN_ELSE).click()
         text_editor_main = self.browser.find_element(*MainPageLocators.TEMPLATE_TEXT).text
 
-        # assert text_editor_main == '', 'There is text in the main editor window'
-
-        # text_editor_option = self.browser.find_element(*MainPageLocators.TEXT_EDITOR).text
         self.browser.find_element(*MainPageLocators.BUTTON_PREVIEW).click()
         text_preview = self.browser.find_element(*PreviewPageLocator.TEXT_MESSAGE_PREVIEW).text
 
@@ -50,10 +47,26 @@ class PreviewPage(BasePage):
         position_preview = self.browser.find_element(*PreviewPageLocator.POSITION_PREVIEW)
         value_position_preview = position_preview.get_attribute('value')
 
-        print(firstname_variables.text)
-        print(value_firstname_preview)
-
         assert '{' + f'{firstname_variables.text}' + '}' == value_firstname_preview, 'The editor variable firstname is not equal to preview'
         assert '{' + f'{lastname_variables.text}' + '}' == value_lastname_preview, 'The editor variable lastname is not equal to preview'
         assert '{' + f'{company_variables.text}' + '}' == value_company_preview, 'The editor variable company is not equal to preview'
         assert '{' + f'{position_variables.text}' + '}' == value_position_preview, 'The editor variable position is not equal to preview'
+
+    def clare_text_var(self, selector_variable):
+        self.browser.find_element(*selector_variable).clear()
+
+    def set_firstname_variable(self, text='test'):
+        self.clare_text_var(PreviewPageLocator.FIRSTNAME_PREVIEW)
+        self.browser.find_element(*PreviewPageLocator.FIRSTNAME_PREVIEW).send_keys(text)
+
+    def set_lastname_variable(self, text='test'):
+        self.clare_text_var(PreviewPageLocator.LASTNAME_PREVIEW)
+        self.browser.find_element(*PreviewPageLocator.LASTNAME_PREVIEW).send_keys(text)
+
+    def set_company_variable(self, text='test'):
+        self.clare_text_var(PreviewPageLocator.COMPANY_PREVIEW)
+        self.browser.find_element(*PreviewPageLocator.COMPANY_PREVIEW).send_keys(text)
+
+    def set_position_variable(self, text='test'):
+        self.clare_text_var(PreviewPageLocator.POSITION_PREVIEW)
+        self.browser.find_element(*PreviewPageLocator.POSITION_PREVIEW).send_keys(text)

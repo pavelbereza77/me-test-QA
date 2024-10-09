@@ -31,3 +31,23 @@ class PreviewPageLocator():
     LASTNAME_PREVIEW = (By.CSS_SELECTOR, "input[placeholder='lastname']")
     COMPANY_PREVIEW = (By.CSS_SELECTOR, "input[placeholder='company']")
     POSITION_PREVIEW = (By.CSS_SELECTOR, "input[placeholder='position']")
+
+
+class BlockIfThenElseLocator():
+    DELITE_BLOCK = (By.XPATH, "//button[contains(@class,'IfThenElseBlock_deleteButton')]")
+    IF_TEXT = (By.CSS_SELECTOR, "textarea[placeholder='if']")
+    IF_TEXT_2 = (By.CSS_SELECTOR, ".undefined .undefined textarea[placeholder='if']")
+    THEN_TEXT = (By.CSS_SELECTOR, "textarea[placeholder='then']")
+    THEN_TEXT_2 = (By.CSS_SELECTOR, ".undefined .undefined textarea[placeholder='then']")
+    ELSE_TEXT = (By.CSS_SELECTOR, "textarea[placeholder='else']")
+    ELSE_TEXT_2 = (By.CSS_SELECTOR, ".undefined .undefined textarea[placeholder='else']")
+    OPTIONAL = (By.CSS_SELECTOR, "textarea[placeholder='optional']")
+    OPTIONAL_2 = (By.CSS_SELECTOR, ".undefined .undefined textarea[placeholder='optional']")
+#
+# def get_then_selector(element):
+#     attribute = element.get_attribute("data-id")
+#     return attribute
+#
+#
+# def get_then_element_2(data_id):
+#     return f"//textarea[@ data-id={data_id} and placeholder = 'then']"

@@ -7,7 +7,6 @@ class EditorTemplatePage(BasePage):
         self.presence_buttons_main_page()
         self.presence_variable_buttons()
         self.add_text_template()
-        self.click_button_if_then_else()
 
     def presence_variable_buttons(self):
         assert self.is_element_present(*MainPageLocators.BUTTON_FIRSTNAME), 'Button {firstname} not presented'
@@ -42,9 +41,3 @@ class EditorTemplatePage(BasePage):
         position = self.browser.find_element(*MainPageLocators.BUTTON_POSITION)
         position.click()
         assert position.text in windows_text_template.text, f'Not {position.text} in edition'
-
-    def click_button_if_then_else(self):
-        if_then_else = self.browser.find_element(*MainPageLocators.BUTTON_IF_THEN_ELSE)
-        if_then_else.click()
-        assert self.is_element_present(*MainPageLocators.BLOK_IF_THEN_ELSE), 'Not blok IF_THEN_ELSE'
-

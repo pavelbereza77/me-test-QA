@@ -1,6 +1,5 @@
 import pytest
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 
 
 def pytest_addoption(parser):
@@ -25,9 +24,3 @@ def browser(request):
     yield browser
     print("\nquit browser..")
     browser.quit()
-
-# browser = webdriver.Chrome()
-# link = "http://localhost:3000/"
-# browser.get(link)
-# button_massage_editor = browser.find_element(By.CSS_SELECTOR, "div[id='root'] button")
-# button_massage_editor.send_keys()
