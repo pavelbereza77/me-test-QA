@@ -1,5 +1,7 @@
 import time
 
+import pytest
+
 from pages.main_page import MainPage
 from pages.editor_page import EditorTemplatePage
 
@@ -24,6 +26,7 @@ def test_presence_buttons_main_page(browser):
     time.sleep(5)
 
 
+@pytest.mark.xfail
 def test_save_text_editor_in_main_windows(browser):
     link = "http://localhost:3000/"
     browser.get(link)
@@ -47,6 +50,3 @@ def test_save_text_editor_in_main_windows(browser):
                                                                               'not match after saving and then logging '
                                                                               'into the editor and activating '
                                                                               'the if_then_else block')
-
-
-

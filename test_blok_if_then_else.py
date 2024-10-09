@@ -26,13 +26,13 @@ def test_present_blok_if_then_else(browser):
     if_then_else_blok.input_text_then(text='I know you work at ')
     page.click_company()
 #######################################################################
-    # page.clik_button_if_then_else()
-    # page.click_position()
+    page.clik_button_if_then_else()
+    page.click_position()
 
-    # if_then_else_blok.input_text_then_2(text='as ')
-    # page.click_position()
-    # if_then_else_blok.input_text_else_2(text=' , but what is your role?')
-    # if_then_else_blok.input_text_optional_2(text=' :)')
+    if_then_else_blok.input_text_then_2(text='as ')
+    page.click_position()
+    if_then_else_blok.input_text_else_2(text=' , but what is your role?')
+    if_then_else_blok.input_text_optional_2(text=' :)')
 ############################################################################################
     if_then_else_blok.input_text_else(text='\nWhere do you work the moment?')
     if_then_else_blok.input_text_optional(text='Jake\nSoftware Developer\njakelennard@gmail.com')
@@ -43,8 +43,8 @@ def test_present_blok_if_then_else(browser):
     preview_page.set_firstname_variable(text='Bill')
     preview_page.set_company_variable(text='Bill & Melinda Gates Foundation')
 ##############################################################################################
-    # preview_page.set_lastname_variable(text='Gates')
-    # preview_page.set_position_variable(text='Co-Chair')
+    preview_page.set_lastname_variable(text='Gates')
+    preview_page.set_position_variable(text='Co-Chair')
 
-    time.sleep(20)
+    time.sleep(5)
 
